@@ -1,0 +1,27 @@
+<%= form_with(model: todo) do |form| %>
+  <% if todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+        <% todo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3 w-50">
+    <%= form.label :description, class:"fw-bold" %>
+    <%= form.text_field :description, class:"form-control", autofocus:"autofocus"  %>
+  </div>
+
+  <div class="field mb-3 w-50">
+    <%= form.label :position, class:"fw-bold"%>
+    <%= form.number_field :position, class:"form-control"  %>
+  </div>
+
+  <div class="actions mb-3 w-50">
+    <%= form.submit class:"btn btn-success" %>
+  </div>
+<% end %>

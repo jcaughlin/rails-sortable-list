@@ -1,0 +1,19 @@
+<div class="row">
+  <p id="notice"><%= notice %></p>
+</div>
+<div class="row">
+  <p>
+    <strong>Description:</strong>
+    <%= @todo.description %>
+  </p>
+</div>
+
+<div class="row">
+  <p><strong>Position:</strong>
+  <%= @todo.position %></p>
+</div>
+
+
+  <%= link_to 'Edit', edit_todo_path(@todo) %> |
+  <%= link_to 'Back', todos_path %>
+
