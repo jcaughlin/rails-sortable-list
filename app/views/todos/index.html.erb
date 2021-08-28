@@ -13,9 +13,9 @@
   <div data-controller="drag" data-drag-url="todos/:id/move">
     <% @todos.order(position: :asc).each do |todo| %>
       <div data-id="<%= todo.id %>" class="card card-body mb-4">
-        <%= todo.description %>
-        <%= todo.position %>
-        <%= todo.id %>
+        <li><%= todo.description %></li>
+        <li><%= 'Postition: ' + todo.position.to_s %> </li>
+        <li><%= 'ID: ' + todo.id.to_s %></li>
       </div>
     <% end %>
   </div>
